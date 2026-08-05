@@ -10,10 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as McpRouteImport } from './routes/mcp'
-import { Route as LaRentEventRouteImport } from './routes/la-rent-event'
 import { Route as KontaktRouteImport } from './routes/kontakt'
-import { Route as GreenwayRouteImport } from './routes/greenway'
-import { Route as ByRiverHillRouteImport } from './routes/by-river-hill'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
@@ -24,24 +21,9 @@ const McpRoute = McpRouteImport.update({
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LaRentEventRoute = LaRentEventRouteImport.update({
-  id: '/la-rent-event',
-  path: '/la-rent-event',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GreenwayRoute = GreenwayRouteImport.update({
-  id: '/greenway',
-  path: '/greenway',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ByRiverHillRoute = ByRiverHillRouteImport.update({
-  id: '/by-river-hill',
-  path: '/by-river-hill',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -70,10 +52,7 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -81,10 +60,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -93,10 +69,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -106,10 +79,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -117,10 +87,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -128,10 +95,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -140,10 +104,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ByRiverHillRoute: typeof ByRiverHillRoute
-  GreenwayRoute: typeof GreenwayRoute
   KontaktRoute: typeof KontaktRoute
-  LaRentEventRoute: typeof LaRentEventRoute
   McpRoute: typeof McpRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -159,32 +120,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/la-rent-event': {
-      id: '/la-rent-event'
-      path: '/la-rent-event'
-      fullPath: '/la-rent-event'
-      preLoaderRoute: typeof LaRentEventRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/greenway': {
-      id: '/greenway'
-      path: '/greenway'
-      fullPath: '/greenway'
-      preLoaderRoute: typeof GreenwayRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/by-river-hill': {
-      id: '/by-river-hill'
-      path: '/by-river-hill'
-      fullPath: '/by-river-hill'
-      preLoaderRoute: typeof ByRiverHillRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -220,10 +160,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ByRiverHillRoute: ByRiverHillRoute,
-  GreenwayRoute: GreenwayRoute,
   KontaktRoute: KontaktRoute,
-  LaRentEventRoute: LaRentEventRoute,
   McpRoute: McpRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
