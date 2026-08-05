@@ -29,16 +29,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Website template for vacation rental and designer clothing rental services." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Website template for vacation rental and designer clothing rental services." },
+      { title: "Nail Lab by Nina — Nokti u Puli" },
+      { name: "description", content: "Nail Lab by Nina — salon za nokte u Puli. Gel, gel lak i manikura." },
+      { name: "author", content: "Nina Zupčić" },
+      { property: "og:title", content: "Nail Lab by Nina — Nokti u Puli" },
+      { property: "og:description", content: "Gel, gel lak i manikura kod nail artistice Nine Zupčić." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Website template for vacation rental and designer clothing rental services." },
+      { name: "twitter:site", content: "@naillab_bynina" },
+      { name: "twitter:title", content: "Nail Lab by Nina — Nokti u Puli" },
+      { name: "twitter:description", content: "Gel, gel lak i manikura kod nail artistice Nine Zupčić." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1cd6c565-f961-4f6c-af2a-33eca9dfb2e6/id-preview-63ffb680--105b7bec-264a-4cac-a69e-075141a9bc50.lovable.app-1776636268553.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1cd6c565-f961-4f6c-af2a-33eca9dfb2e6/id-preview-63ffb680--105b7bec-264a-4cac-a69e-075141a9bc50.lovable.app-1776636268553.png" },
     ],
@@ -56,7 +56,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="hr">
       <head>
         <HeadContent />
       </head>

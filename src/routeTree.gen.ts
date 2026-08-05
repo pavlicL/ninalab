@@ -9,39 +9,33 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UslugeRouteImport } from './routes/usluge'
+import { Route as OMeniRouteImport } from './routes/o-meni'
 import { Route as McpRouteImport } from './routes/mcp'
-import { Route as LaRentEventRouteImport } from './routes/la-rent-event'
 import { Route as KontaktRouteImport } from './routes/kontakt'
-import { Route as GreenwayRouteImport } from './routes/greenway'
-import { Route as ByRiverHillRouteImport } from './routes/by-river-hill'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
+const UslugeRoute = UslugeRouteImport.update({
+  id: '/usluge',
+  path: '/usluge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OMeniRoute = OMeniRouteImport.update({
+  id: '/o-meni',
+  path: '/o-meni',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LaRentEventRoute = LaRentEventRouteImport.update({
-  id: '/la-rent-event',
-  path: '/la-rent-event',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GreenwayRoute = GreenwayRouteImport.update({
-  id: '/greenway',
-  path: '/greenway',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ByRiverHillRoute = ByRiverHillRouteImport.update({
-  id: '/by-river-hill',
-  path: '/by-river-hill',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -70,22 +64,20 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
+  '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
+  '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -93,11 +85,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/by-river-hill': typeof ByRiverHillRoute
-  '/greenway': typeof GreenwayRoute
   '/kontakt': typeof KontaktRoute
-  '/la-rent-event': typeof LaRentEventRoute
   '/mcp': typeof McpRoute
+  '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -106,33 +97,30 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
+    | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
+    | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
   id:
     | '__root__'
     | '/'
-    | '/by-river-hill'
-    | '/greenway'
     | '/kontakt'
-    | '/la-rent-event'
     | '/mcp'
+    | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
@@ -140,11 +128,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ByRiverHillRoute: typeof ByRiverHillRoute
-  GreenwayRoute: typeof GreenwayRoute
   KontaktRoute: typeof KontaktRoute
-  LaRentEventRoute: typeof LaRentEventRoute
   McpRoute: typeof McpRoute
+  OMeniRoute: typeof OMeniRoute
+  UslugeRoute: typeof UslugeRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -152,6 +139,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/usluge': {
+      id: '/usluge'
+      path: '/usluge'
+      fullPath: '/usluge'
+      preLoaderRoute: typeof UslugeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-meni': {
+      id: '/o-meni'
+      path: '/o-meni'
+      fullPath: '/o-meni'
+      preLoaderRoute: typeof OMeniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/mcp': {
       id: '/mcp'
       path: '/mcp'
@@ -159,32 +160,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/la-rent-event': {
-      id: '/la-rent-event'
-      path: '/la-rent-event'
-      fullPath: '/la-rent-event'
-      preLoaderRoute: typeof LaRentEventRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/greenway': {
-      id: '/greenway'
-      path: '/greenway'
-      fullPath: '/greenway'
-      preLoaderRoute: typeof GreenwayRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/by-river-hill': {
-      id: '/by-river-hill'
-      path: '/by-river-hill'
-      fullPath: '/by-river-hill'
-      preLoaderRoute: typeof ByRiverHillRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -220,11 +200,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ByRiverHillRoute: ByRiverHillRoute,
-  GreenwayRoute: GreenwayRoute,
   KontaktRoute: KontaktRoute,
-  LaRentEventRoute: LaRentEventRoute,
   McpRoute: McpRoute,
+  OMeniRoute: OMeniRoute,
+  UslugeRoute: UslugeRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
