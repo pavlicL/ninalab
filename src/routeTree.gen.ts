@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UslugeRouteImport } from './routes/usluge'
 import { Route as OMeniRouteImport } from './routes/o-meni'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as KontaktRouteImport } from './routes/kontakt'
@@ -17,6 +18,11 @@ import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } fr
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[.mcp]/invoke-tool/$tool'
 
+const UslugeRoute = UslugeRouteImport.update({
+  id: '/usluge',
+  path: '/usluge',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OMeniRoute = OMeniRouteImport.update({
   id: '/o-meni',
   path: '/o-meni',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/.mcp/invoke-tool/$tool': typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/.mcp/invoke-tool/$tool'
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   McpRoute: typeof McpRoute
   OMeniRoute: typeof OMeniRoute
+  UslugeRoute: typeof UslugeRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   Char91DotmcpChar93InvokeToolToolRoute: typeof Char91DotmcpChar93InvokeToolToolRoute
@@ -126,6 +139,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/usluge': {
+      id: '/usluge'
+      path: '/usluge'
+      fullPath: '/usluge'
+      preLoaderRoute: typeof UslugeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/o-meni': {
       id: '/o-meni'
       path: '/o-meni'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   McpRoute: McpRoute,
   OMeniRoute: OMeniRoute,
+  UslugeRoute: UslugeRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
