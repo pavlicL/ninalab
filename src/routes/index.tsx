@@ -152,27 +152,31 @@ function HomePage() {
         </div>
       </section>
 
-      {/* GALLERY PLACEHOLDER */}
+      {/* GALLERY */}
       <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24">
-        <div className="max-w-2xl mb-12">
-          <p className="eyebrow"><span className="gold-line mr-3" />Galerija</p>
-          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
-            Radovi uskoro.
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Fotografije radova dodajemo uskoro. Do tada, sve najnovije možeš vidjeti na
-            Instagramu.
-          </p>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-6 mb-12 sm:flex sm:justify-between">
+          <div className="min-w-0 max-w-2xl">
+            <p className="eyebrow"><span className="gold-line mr-3" />Galerija</p>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
+              Radovi.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Fotografije radova dodajemo uskoro. Do tada, sve najnovije možeš vidjeti na
+              Instagramu.
+            </p>
+          </div>
+          <a
+            href="https://www.instagram.com/naillab_bynina/"
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 inline-flex items-center gap-2 text-sm text-foreground hover:text-gold transition-colors border-b border-gold pb-1"
+          >
+            <Instagram size={16} /> @naillab_bynina
+          </a>
         </div>
-        <a
-          href="https://www.instagram.com/naillab_bynina/"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-foreground hover:text-gold transition-colors"
-        >
-          <Instagram size={16} /> @naillab_bynina
-        </a>
+        <GalleryGrid />
       </section>
+
 
       {/* CTA */}
       <section className="border-t border-border/60">
