@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { GalleryGrid } from "@/components/GalleryGrid";
 import nina from "@/assets/nina.jpg.asset.json";
 import { ArrowUpRight, Phone, Instagram, Sparkles, Heart, Gem } from "lucide-react";
 
