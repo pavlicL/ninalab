@@ -4,9 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const nav = [
   { to: "/", label: "Početna" },
-  { to: "/by-river-hill", label: "By River Hill" },
-  { to: "/greenway", label: "Greenway" },
-  { to: "/la-rent-event", label: "La Rent Event" },
+  { to: "/o-meni", label: "O meni" },
+  { to: "/usluge", label: "Usluge" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
@@ -17,8 +16,8 @@ export function SiteHeader() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex flex-col leading-none">
-          <span className="font-display text-2xl tracking-tight text-foreground">Romana Bunoza</span>
-          <span className="eyebrow mt-0.5 text-[0.6rem]">Family · Business · Style</span>
+          <span className="font-display text-2xl tracking-tight text-foreground">Nail Lab by Nina</span>
+          <span className="eyebrow mt-0.5 text-[0.6rem]">Nail artist · Pula</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">
