@@ -1,0 +1,135 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  @font-face {
+    font-family: "Cormorant Garamond";
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2") format("woff2");
+  }
+}
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-sage: var(--sage);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-elegant: 0 30px 80px -30px color-mix(in oklab, var(--primary) 25%, transparent);
+  --shadow-soft: 0 10px 40px -15px color-mix(in oklab, var(--primary) 15%, transparent);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Cream / ivory base */
+  --background: oklch(0.975 0.012 85);
+  --foreground: oklch(0.22 0.02 60);
+
+  --card: oklch(0.985 0.008 85);
+  --card-foreground: oklch(0.22 0.02 60);
+
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.22 0.02 60);
+
+  /* Deep warm taupe as primary */
+  --primary: oklch(0.32 0.025 55);
+  --primary-foreground: oklch(0.97 0.01 85);
+
+  /* Soft beige */
+  --secondary: oklch(0.93 0.018 80);
+  --secondary-foreground: oklch(0.32 0.025 55);
+
+  --muted: oklch(0.94 0.012 80);
+  --muted-foreground: oklch(0.48 0.02 60);
+
+  --accent: oklch(0.92 0.025 75);
+  --accent-foreground: oklch(0.32 0.025 55);
+
+  /* Brand accents */
+  --gold: oklch(0.74 0.09 75);
+  --gold-foreground: oklch(0.2 0.02 60);
+  --sage: oklch(0.62 0.04 130);
+
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.88 0.015 75);
+  --input: oklch(0.9 0.012 75);
+  --ring: oklch(0.74 0.09 75);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+
+  .gold-line {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background-color: var(--color-gold);
+    vertical-align: middle;
+  }
+}
