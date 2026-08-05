@@ -7,15 +7,15 @@
   },
   "mcp": {
     "server": {
-      "name": "river-hill-la-rent",
+      "name": "nail-lab-by-nina",
       "version": "0.1.0",
-      "title": "River Hill & La Rent"
+      "title": "Nail Lab by Nina"
     },
     "tools": [
       {
-        "name": "list_brands",
-        "title": "List brands",
-        "description": "List Romana Bunoza's three brands (By River Hill Croatia, Greenway, La Rent Event) with their category, page path and a short summary.",
+        "name": "list_services",
+        "title": "List services",
+        "description": "List all nail services offered by Nail Lab by Nina (gel, gel lak, manikura).",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -29,9 +29,9 @@
         "outputSchema": null
       },
       {
-        "name": "get_brand",
-        "title": "Get brand details",
-        "description": "Get full public details for one brand by slug: by-river-hill, greenway or la-rent-event.",
+        "name": "get_service",
+        "title": "Get service details",
+        "description": "Get full details for one service by slug: gel, gel-lak or manikura.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -43,7 +43,7 @@
           "properties": {
             "slug": {
               "type": "string",
-              "description": "Brand slug: by-river-hill, greenway or la-rent-event."
+              "description": "Service slug: gel, gel-lak or manikura."
             }
           },
           "required": [

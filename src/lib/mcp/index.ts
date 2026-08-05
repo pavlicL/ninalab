@@ -1,13 +1,13 @@
 import { defineMcp } from "@lovable.dev/mcp-js";
-import listBrandsTool from "./tools/list-brands";
-import getBrandTool from "./tools/get-brand";
+import listServicesTool from "./tools/list-services";
+import getServiceTool from "./tools/get-service";
 import getContactInfoTool from "./tools/get-contact-info";
 
 export default defineMcp({
-  name: "river-hill-la-rent",
-  title: "River Hill & La Rent",
+  name: "nail-lab-by-nina",
+  title: "Nail Lab by Nina",
   version: "0.1.0",
   instructions:
-    "Public tools for Romana Bunoza's website. Use `list_brands` to see the three brands (By River Hill Croatia vacation house, Greenway healthy home, La Rent Event designer clothing rental), `get_brand` for details on one of them, and `get_contact_info` for public contact details.",
-  tools: [listBrandsTool, getBrandTool, getContactInfoTool],
+    "Public tools for Nail Lab by Nina, a nail salon in Pula run by nail artist Nina Zupčić. Use `list_services` for the services (gel, gel lak, manikura), `get_service` for details on one, and `get_contact_info` for phone and Instagram.",
+  tools: [listServicesTool, getServiceTool, getContactInfoTool],
 });
