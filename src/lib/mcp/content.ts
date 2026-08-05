@@ -1,59 +1,47 @@
-export type Brand = {
+export type Service = {
   slug: string;
   name: string;
-  category: string;
-  path: string;
   summary: string;
   details: string[];
 };
 
 export const OWNER = {
-  name: "Romana Bunoza",
-  tagline: "Family · Business · Style",
-  location: "Zadobarje, Karlovac, Hrvatska",
-  email: "hello@romanabunoza.com",
-  instagram: "https://instagram.com/bunoza_family",
-  site: "https://rbunoza.lovable.app",
+  name: "Nina Zupčić",
+  brand: "Nail Lab by Nina",
+  tagline: "Nail artist · Pula",
+  phone: "091 604 3232",
+  instagram: "https://www.instagram.com/naillab_bynina/",
 };
 
-export const BRANDS: Brand[] = [
+export const SERVICES: Service[] = [
   {
-    slug: "by-river-hill",
-    name: "By River Hill Croatia",
-    category: "Vacation House",
-    path: "/by-river-hill",
-    summary:
-      "Luksuzna kuća za odmor u Zadobarju — mir rijeke, kameni zidovi i pogled koji ostaje s vama.",
+    slug: "gel",
+    name: "Gel",
+    summary: "Izrada i nadogradnja noktiju gelom — čvrsto, prirodno i dugotrajno.",
     details: [
-      "Lokacija: Zadobarje kraj Karlovca, uz rijeku Koranu.",
-      "Namijenjeno obiteljima, parovima i manjim grupama koje traže mir i privatnost.",
-      "Upiti i rezervacije idu putem e-maila ili Instagrama.",
+      "Izrada gel noktiju prilagođena obliku tvoje ruke.",
+      "Popravak i nadogradnja postojećih noktiju.",
+      "Elegantni french i decentni nail art detalji.",
     ],
   },
   {
-    slug: "greenway",
-    name: "Greenway",
-    category: "Healthy Home",
-    path: "/greenway",
-    summary:
-      "Zdrav dom bez kemije — prirodni proizvodi i poslovna prilika za žene koje žele više slobode.",
+    slug: "gel-lak",
+    name: "Gel lak",
+    summary: "Trajni lak s visokim sjajem koji izdrži tjednima bez oštećenja.",
     details: [
-      "Proizvodi za čišćenje doma i njegu bez agresivne kemije.",
-      "Mogućnost pridruživanja timu i rada od kuće uz mentorstvo.",
-      "Zemljana, zelena filozofija: obitelj, zdravlje i održivost.",
+      "Široka paleta nijansi — od nude tonova do izražajnih boja.",
+      "Uredna priprema nokta i skidanje prethodnog laka.",
+      "Idealno za one koje žele prirodnu dužinu i čist izgled.",
     ],
   },
   {
-    slug: "la-rent-event",
-    name: "La Rent Event",
-    category: "Designer Rental",
-    path: "/la-rent-event",
-    summary:
-      "Najam dizajnerske odjeće za posebne prilike — eleganciju zaslužuje svaki trenutak.",
+    slug: "manikura",
+    name: "Manikura",
+    summary: "Njegovana i uredna ruka — temelj svakog lijepog nokta.",
     details: [
-      "Dizajnerske haljine i komadi za vjenčanja, proslave i poslovne evente.",
-      "Osobno savjetovanje pri odabiru komada.",
-      "Rezervacija termina putem Instagrama ili e-maila.",
+      "Oblikovanje nokta i obrada zanoktica.",
+      "Njega kutikule i hidratacija.",
+      "Može se kombinirati s gelom ili gel lakom.",
     ],
   },
 ];
