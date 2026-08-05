@@ -1,56 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import heroRomana from "@/assets/hero-romana.png";
-import byRiverHill from "@/assets/by-river-hill.png";
-import greenway from "@/assets/greenway.jpg";
-import laRentEvent from "@/assets/la-rent-event.jpg";
-import { ArrowUpRight } from "lucide-react";
+import nina from "@/assets/nina.jpg.asset.json";
+import { ArrowUpRight, Phone, Instagram, Sparkles, Heart, Gem } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Romana Bunoza — Poduzetnica, Family · Business · Style" },
+      { title: "Nail Lab by Nina — Nokti u Puli | Gel, gel lak, manikura" },
       {
         name: "description",
         content:
-          "Službena stranica Romane Bunoze. By River Hill Croatia, Greenway i La Rent Event — od zdravog doma bez kemije do života punog smisla.",
+          "Nail Lab by Nina — salon za nokte u Puli. Gel, gel lak i manikura uz pedantan rad, elegantni french i decentne detalje. Naruči se na 091 604 3232.",
       },
-      { property: "og:title", content: "Romana Bunoza — Family · Business · Style" },
+      { property: "og:title", content: "Nail Lab by Nina — Nokti u Puli" },
       {
         property: "og:description",
-        content: "Tri brenda, jedna priča. Poduzetnica, mama i ljubiteljica elegancije.",
+        content: "Gel, gel lak i manikura kod nail artistice Nine Zupčić u Puli.",
       },
-      { property: "og:image", content: heroRomana },
       { property: "og:type", content: "website" },
     ],
   }),
   component: HomePage,
 });
 
-const brands = [
+const services = [
   {
-    to: "/by-river-hill" as const,
-    eyebrow: "Vacation House",
-    title: "By River Hill Croatia",
-    description:
-      "Luksuzna kuća za odmor u Zadobarju. Mir rijeke, kameni zidovi i pogled koji ostaje s vama.",
-    image: byRiverHill,
+    icon: Gem,
+    title: "Gel",
+    text: "Izrada i nadogradnja gel noktiju — čvrsto, prirodno i dugotrajno.",
   },
   {
-    to: "/greenway" as const,
-    eyebrow: "Healthy Home",
-    title: "Greenway",
-    description:
-      "Zdrav dom bez kemije. Prirodni proizvodi koji su promijenili moj život i život moje obitelji.",
-    image: greenway,
+    icon: Sparkles,
+    title: "Gel lak",
+    text: "Trajni lak s visokim sjajem koji izdrži tjednima bez oštećenja.",
   },
   {
-    to: "/la-rent-event" as const,
-    eyebrow: "Designer Rental",
-    title: "La Rent Event",
-    description:
-      "Najam dizajnerske odjeće za posebne trenutke. Eleganciju zaslužuje svaka prilika.",
-    image: laRentEvent,
+    icon: Heart,
+    title: "Manikura",
+    text: "Njegovana i uredna ruka — temelj svakog lijepog nokta.",
   },
 ];
 
@@ -59,33 +46,33 @@ function HomePage() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-12 lg:pt-20 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-12 lg:pt-20 pb-20 lg:pb-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-6 order-2 lg:order-1">
-            <p className="eyebrow"><span className="gold-line mr-3" />Romana Bunoza</p>
+            <p className="eyebrow"><span className="gold-line mr-3" />Nail Lab by Nina</p>
             <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.98] text-foreground">
-              Family heart.
+              Nokti koji
               <br />
-              <span className="italic text-gold">Business</span> mind.
+              naglašavaju
               <br />
-              Timeless style.
+              <span className="italic text-gold">prirodnu ljepotu.</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              Poduzetnica, mama i vječita zaljubljenica u eleganciju. Vodim tri brenda
-              koji odražavaju moje vrijednosti — zdravlje, lijepo i smisleno.
+              Nail artist Nina Zupčić — gel, gel lak i manikura u Puli. Pedantan rad,
+              elegantni french i decentni detalji za svaku priliku.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/kontakt"
+              <a
+                href="tel:+385916043232"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm tracking-wide hover:bg-primary/90 transition-colors"
               >
-                Kontaktiraj me <ArrowUpRight size={16} />
-              </Link>
-              <a
-                href="#brendovi"
+                <Phone size={16} /> 091 604 3232
+              </a>
+              <Link
+                to="/usluge"
                 className="inline-flex items-center gap-2 px-2 py-3.5 text-sm tracking-wide text-foreground border-b border-gold hover:text-gold transition-colors"
               >
-                Otkrij brendove
-              </a>
+                Pogledaj usluge <ArrowUpRight size={16} />
+              </Link>
             </div>
           </div>
 
@@ -93,123 +80,114 @@ function HomePage() {
             <div className="relative aspect-[4/5] max-w-md mx-auto overflow-hidden">
               <div className="absolute -inset-4 border border-gold/30" />
               <img
-                src={heroRomana}
-                alt="Romana Bunoza"
+                src={nina.url}
+                alt="Nina Zupčić, nail artist iz Pule"
                 className="relative h-full w-full object-cover"
-                width={1280}
-                height={1600}
               />
-            </div>
-            <div className="hidden lg:block absolute -bottom-6 -left-6 bg-background border border-border px-6 py-4 shadow-soft">
-              <p className="font-display italic text-2xl text-foreground">26.2k</p>
-              <p className="eyebrow mt-1 text-[0.6rem]">Instagram zajednica</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* QUOTE STRIP */}
+      {/* QUOTE */}
       <section className="border-y border-border/60 bg-secondary/50">
         <div className="mx-auto max-w-5xl px-6 py-16 text-center">
           <p className="font-display italic text-3xl md:text-4xl text-foreground leading-snug">
-            „Od zdravog doma bez kemije do života punog smisla."
+            „Svaki nokat je mali detalj koji mijenja cijeli dojam."
           </p>
-          <p className="eyebrow mt-6">— Romana</p>
+          <p className="eyebrow mt-6">— Nina</p>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-12 gap-12 items-start">
-        <div className="lg:col-span-4">
-          <p className="eyebrow"><span className="gold-line mr-3" />O meni</p>
+      {/* SERVICES */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+        <div className="max-w-2xl mb-16">
+          <p className="eyebrow"><span className="gold-line mr-3" />Usluge</p>
           <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
-            Žena iza tri priče.
+            Tri usluge, jedan standard.
           </h2>
         </div>
-        <div className="lg:col-span-8 space-y-6 text-base lg:text-lg leading-relaxed text-muted-foreground">
-          <p>
-            Već godinama gradim svijet u kojem se obitelj, posao i estetika ne isključuju
-            — već nadopunjuju. Vjerujem da svaka žena zaslužuje dom u kojem diše čisto,
-            posao u kojem rasla i trenutke u kojima se osjeća prelijepo.
-          </p>
-          <p>
-            Kroz <em className="text-foreground not-italic font-medium">By River Hill Croatia</em>,
-            <em className="text-foreground not-italic font-medium"> Greenway</em> i
-            <em className="text-foreground not-italic font-medium"> La Rent Event</em> dijelim
-            ono što sama živim — mir, zdravlje i eleganciju, bez kompromisa.
-          </p>
-          <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border/60">
-            <div>
-              <p className="font-display text-3xl text-foreground">3</p>
-              <p className="eyebrow mt-1 text-[0.6rem]">Brenda</p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="bg-card border border-border/70 p-8 hover:border-gold transition-colors"
+            >
+              <s.icon className="text-gold" size={26} />
+              <h3 className="mt-5 font-display text-2xl text-foreground">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
             </div>
-            <div>
-              <p className="font-display text-3xl text-foreground">26k+</p>
-              <p className="eyebrow mt-1 text-[0.6rem]">Followers</p>
-            </div>
-            <div>
-              <p className="font-display text-3xl text-foreground">∞</p>
-              <p className="eyebrow mt-1 text-[0.6rem]">Inspiracije</p>
-            </div>
+          ))}
+        </div>
+        <Link
+          to="/usluge"
+          className="mt-12 inline-flex items-center gap-2 text-xs tracking-widest uppercase text-foreground hover:text-gold transition-colors border-b border-gold pb-1"
+        >
+          Detalji usluga <ArrowUpRight size={14} />
+        </Link>
+      </section>
+
+      {/* ABOUT TEASER */}
+      <section className="bg-secondary/40 border-y border-border/60">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 grid lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-4">
+            <p className="eyebrow"><span className="gold-line mr-3" />O meni</p>
+            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
+              Nina Zupčić.
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-6 text-base lg:text-lg leading-relaxed text-muted-foreground">
+            <p>
+              Izradom noktiju bavim se već godinu i pol, uz salonsko iskustvo i
+              svakodnevni rad s klijenticama. Posebno volim elegantni french i decentne
+              detalje koji naglašavaju prirodnu ljepotu noktiju.
+            </p>
+            <Link
+              to="/o-meni"
+              className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-foreground hover:text-gold transition-colors border-b border-gold pb-1"
+            >
+              Pročitaj cijelu priču <ArrowUpRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* BRANDS */}
-      <section id="brendovi" className="bg-secondary/40 border-y border-border/60">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
-          <div className="max-w-2xl mb-16">
-            <p className="eyebrow"><span className="gold-line mr-3" />Brendovi</p>
-            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
-              Tri svijeta, jedna filozofija.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            {brands.map((b) => (
-              <Link
-                key={b.to}
-                to={b.to}
-                className="group block bg-card border border-border/70 hover:border-gold transition-all duration-500 hover:shadow-elegant"
-              >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={b.image}
-                    alt={b.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-7">
-                  <p className="eyebrow text-[0.6rem]">{b.eyebrow}</p>
-                  <h3 className="mt-3 font-display text-2xl text-foreground">{b.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.description}</p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-xs tracking-widest uppercase text-foreground group-hover:text-gold transition-colors">
-                    Saznaj više <ArrowUpRight size={14} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+      {/* GALLERY PLACEHOLDER */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24">
+        <div className="max-w-2xl mb-12">
+          <p className="eyebrow"><span className="gold-line mr-3" />Galerija</p>
+          <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
+            Radovi uskoro.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Fotografije radova dodajemo uskoro. Do tada, sve najnovije možeš vidjeti na
+            Instagramu.
+          </p>
         </div>
+        <a
+          href="https://www.instagram.com/naillab_bynina/"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-foreground hover:text-gold transition-colors"
+        >
+          <Instagram size={16} /> @naillab_bynina
+        </a>
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 text-center">
-        <p className="eyebrow">Suradnja</p>
-        <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl mx-auto">
-          Možeš i ti — <span className="italic text-gold">piši mi.</span>
-        </h2>
-        <p className="mt-6 max-w-xl mx-auto text-muted-foreground">
-          Bilo da te zanima boravak u Zadobarju, prirodni proizvodi za dom ili savršena
-          haljina za posebnu prigodu — tu sam.
-        </p>
-        <Link
-          to="/kontakt"
-          className="mt-10 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors"
-        >
-          Kontaktiraj me <ArrowUpRight size={16} />
-        </Link>
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 text-center">
+          <p className="eyebrow">Termini</p>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight max-w-3xl mx-auto">
+            Rezerviraj svoj <span className="italic text-gold">termin.</span>
+          </h2>
+          <Link
+            to="/kontakt"
+            className="mt-10 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors"
+          >
+            Kontakt <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </section>
     </SiteLayout>
   );
