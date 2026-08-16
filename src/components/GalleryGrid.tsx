@@ -1,10 +1,4 @@
 import { ImageIcon } from "lucide-react";
-import french from "@/assets/gallery/french.webp";
-import nudeGelLak from "@/assets/gallery/nude-gel-lak.webp";
-import gelNadogradnja from "@/assets/gallery/gel-nadogradnja.webp";
-import manikura from "@/assets/gallery/manikura.webp";
-import detalji from "@/assets/gallery/detalji.webp";
-import bademOblik from "@/assets/gallery/badem-oblik.webp";
 
 export type GalleryItem = {
   /** Kad dodaš fotografiju, upiši njezin URL ovdje. */
