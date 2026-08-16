@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { GalleryGrid } from "@/components/GalleryGrid";
-import nina from "@/assets/nina.webp";
-import heroLeft from "@/assets/gallery/nude-gel-lak.webp";
-import heroRight from "@/assets/gallery/badem-oblik.webp";
+import ninaAsset from "@/assets/nina.jpg.asset.json";
+
+const nina = ninaAsset.url;
 import { ArrowUpRight, Phone, Instagram, Sparkles, Heart, Gem } from "lucide-react";
 
 export const Route = createFileRoute("/")({
