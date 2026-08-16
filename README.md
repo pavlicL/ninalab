@@ -1,8 +1,4 @@
-# Remix of River Hill & La Rent
-
-kreiraj predlozak web stranice za ovu korisnicu, bavi se iznajmljivanjem kuće za odmor By River Hill Croatia u Zadobarju, Greenway kompanijom i najmom dizajnerske odjeće La Rent Event, elegantno, sofisticirano, brend Romane Bunoze
-
-This project was built with [Lovable](https://lovable.dev).
+#Ninas Nail Lab
 
 **Live app**: https://ninalab.lovable.app
 
