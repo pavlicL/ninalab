@@ -8,12 +8,12 @@ export type GalleryItem = {
 };
 
 export const galleryItems: GalleryItem[] = [
-  { src: french, alt: "Elegantni french na gel noktima", caption: "French" },
-  { src: nudeGelLak, alt: "Gel lak u nude tonu", caption: "Nude gel lak" },
-  { src: gelNadogradnja, alt: "Nadogradnja gel noktiju", caption: "Gel nadogradnja" },
-  { src: manikura, alt: "Manikura i njega zanoktica", caption: "Manikura" },
-  { src: detalji, alt: "Decentni detalji na noktima", caption: "Detalji" },
-  { src: bademOblik, alt: "Prirodna duljina i oblik badem", caption: "Badem oblik" },
+  { alt: "Elegantni french na gel noktima", caption: "French" },
+  { alt: "Gel lak u nude tonu", caption: "Nude gel lak" },
+  { alt: "Nadogradnja gel noktiju", caption: "Gel nadogradnja" },
+  { alt: "Manikura i njega zanoktica", caption: "Manikura" },
+  { alt: "Decentni detalji na noktima", caption: "Detalji" },
+  { alt: "Prirodna duljina i oblik badem", caption: "Badem oblik" },
 ];
 
 export function GalleryGrid({ items = galleryItems }: { items?: GalleryItem[] }) {
