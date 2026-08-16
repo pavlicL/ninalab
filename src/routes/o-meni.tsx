@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
-import nina from "@/assets/nina.jpg.asset.json";
+import nina from "@/assets/nina.webp";
 import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/o-meni")({
@@ -40,7 +40,7 @@ function OMeniPage() {
         <div className="order-1 lg:order-2 relative aspect-[4/5] overflow-hidden">
           <div className="absolute inset-0 -translate-x-3 translate-y-3 border border-gold/40" />
           <img
-            src={nina.url}
+            src={nina}
             alt="Nina Zupčić, nail artistica iz Pule"
             className="relative h-full w-full object-cover"
             loading="lazy"

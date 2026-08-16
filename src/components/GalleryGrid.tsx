@@ -1,4 +1,10 @@
 import { ImageIcon } from "lucide-react";
+import french from "@/assets/gallery/french.webp";
+import nudeGelLak from "@/assets/gallery/nude-gel-lak.webp";
+import gelNadogradnja from "@/assets/gallery/gel-nadogradnja.webp";
+import manikura from "@/assets/gallery/manikura.webp";
+import detalji from "@/assets/gallery/detalji.webp";
+import bademOblik from "@/assets/gallery/badem-oblik.webp";
 
 export type GalleryItem = {
   /** Kad dodaš fotografiju, upiši njezin URL ovdje. */
@@ -7,14 +13,13 @@ export type GalleryItem = {
   caption?: string;
 };
 
-/** Placeholderi — zamijeni `src` pravim fotografijama radova. */
 export const galleryItems: GalleryItem[] = [
-  { alt: "Elegantni french na gel noktima", caption: "French" },
-  { alt: "Gel lak u nude tonu", caption: "Nude gel lak" },
-  { alt: "Nadogradnja gel noktiju", caption: "Gel nadogradnja" },
-  { alt: "Manikura i njega zanoktica", caption: "Manikura" },
-  { alt: "Decentni detalji na noktima", caption: "Detalji" },
-  { alt: "Prirodna duljina i oblik badem", caption: "Badem oblik" },
+  { src: french, alt: "Elegantni french na gel noktima", caption: "French" },
+  { src: nudeGelLak, alt: "Gel lak u nude tonu", caption: "Nude gel lak" },
+  { src: gelNadogradnja, alt: "Nadogradnja gel noktiju", caption: "Gel nadogradnja" },
+  { src: manikura, alt: "Manikura i njega zanoktica", caption: "Manikura" },
+  { src: detalji, alt: "Decentni detalji na noktima", caption: "Detalji" },
+  { src: bademOblik, alt: "Prirodna duljina i oblik badem", caption: "Badem oblik" },
 ];
 
 export function GalleryGrid({ items = galleryItems }: { items?: GalleryItem[] }) {

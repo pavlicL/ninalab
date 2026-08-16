@@ -39,8 +39,6 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@naillab_bynina" },
       { name: "twitter:title", content: "Nail Lab by Nina — Nokti u Puli" },
       { name: "twitter:description", content: "Gel, gel lak i manikura kod nail artistice Nine Zupčić." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1cd6c565-f961-4f6c-af2a-33eca9dfb2e6/id-preview-63ffb680--105b7bec-264a-4cac-a69e-075141a9bc50.lovable.app-1776636268553.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1cd6c565-f961-4f6c-af2a-33eca9dfb2e6/id-preview-63ffb680--105b7bec-264a-4cac-a69e-075141a9bc50.lovable.app-1776636268553.png" },
     ],
     links: [
       {

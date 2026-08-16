@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { GalleryGrid } from "@/components/GalleryGrid";
-import nina from "@/assets/nina.jpg.asset.json";
+import nina from "@/assets/nina.webp";
+import heroLeft from "@/assets/gallery/nude-gel-lak.webp";
+import heroRight from "@/assets/gallery/badem-oblik.webp";
 import { ArrowUpRight, Phone, Instagram, Sparkles, Heart, Gem } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -78,13 +80,45 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="relative aspect-[4/5] max-w-md mx-auto overflow-hidden">
-              <div className="absolute -inset-4 border border-gold/30" />
-              <img
-                src={nina.url}
-                alt="Nina Zupčić, nail artist iz Pule"
-                className="relative h-full w-full object-cover"
-              />
+            <div className="flex items-center justify-center gap-3 xl:gap-4">
+              <div
+                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 75%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 75%)",
+                }}
+              >
+                <img
+                  src={heroLeft}
+                  alt="Rad Nail Lab by Nina — nude gel lak"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="relative aspect-[4/5] w-full max-w-md xl:max-w-sm shrink-0 overflow-hidden">
+                <div className="absolute -inset-4 border border-gold/30" />
+                <img
+                  src={nina}
+                  alt="Nina Zupčić, nail artist iz Pule"
+                  className="relative h-full w-full object-cover"
+                />
+              </div>
+
+              <div
+                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
+                style={{
+                  maskImage: "linear-gradient(to left, transparent, black 75%)",
+                  WebkitMaskImage: "linear-gradient(to left, transparent, black 75%)",
+                }}
+              >
+                <img
+                  src={heroRight}
+                  alt="Rad Nail Lab by Nina — badem oblik noktiju"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -162,8 +196,7 @@ function HomePage() {
               Radovi.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Fotografije radova dodajemo uskoro. Do tada, sve najnovije možeš vidjeti na
-              Instagramu.
+              Izbor radova iz salona. Sve najnovije možeš vidjeti na Instagramu.
             </p>
           </div>
           <a
