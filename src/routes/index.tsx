@@ -80,43 +80,13 @@ function HomePage() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="flex items-center justify-center gap-3 xl:gap-4">
-              <div
-                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
-                style={{
-                  maskImage: "linear-gradient(to right, transparent, black 75%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent, black 75%)",
-                }}
-              >
-                <img
-                  src={heroLeft}
-                  alt="Rad Nail Lab by Nina — nude gel lak"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-
+            <div className="flex items-center justify-center">
               <div className="relative aspect-[4/5] w-full max-w-md xl:max-w-sm shrink-0 overflow-hidden">
                 <div className="absolute -inset-4 border border-gold/30" />
                 <img
                   src={nina}
                   alt="Nina Zupčić, nail artist iz Pule"
                   className="relative h-full w-full object-cover"
-                />
-              </div>
-
-              <div
-                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
-                style={{
-                  maskImage: "linear-gradient(to left, transparent, black 75%)",
-                  WebkitMaskImage: "linear-gradient(to left, transparent, black 75%)",
-                }}
-              >
-                <img
-                  src={heroRight}
-                  alt="Rad Nail Lab by Nina — badem oblik noktiju"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
                 />
               </div>
             </div>
