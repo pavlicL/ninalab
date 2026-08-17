@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "firebase-dist",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "_headers"],
+    "headers": [
+      {
+        "source": "/assets/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": { "port": 5050 }
+  }
+}
