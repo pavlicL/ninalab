@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { BackButton } from "@/components/BackButton";
 import { Instagram, Phone, MapPin } from "lucide-react";
+import { OWNER } from "@/lib/mcp/content";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -25,6 +27,7 @@ export const Route = createFileRoute("/kontakt")({
 function KontaktPage() {
   return (
     <SiteLayout>
+      <BackButton />
       <section className="mx-auto max-w-4xl px-6 lg:px-10 py-24 lg:py-32 text-center">
         <p className="eyebrow"><span className="gold-line mr-3" />Kontakt</p>
         <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight">
@@ -59,11 +62,18 @@ function KontaktPage() {
             </p>
           </a>
 
-          <div className="bg-card border border-border p-8">
+          <a
+            href={`https://maps.google.com/?q=${encodeURIComponent(OWNER.address)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="group bg-card border border-border hover:border-gold p-8 transition-colors"
+          >
             <MapPin className="mx-auto text-gold" size={28} />
             <p className="mt-4 eyebrow text-[0.6rem]">Lokacija</p>
-            <p className="mt-2 font-display text-xl text-foreground">Pula, HR</p>
-          </div>
+            <p className="mt-2 font-display text-xl text-foreground group-hover:text-gold transition-colors">
+              {OWNER.address}
+            </p>
+          </a>
         </div>
       </section>
     </SiteLayout>

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UslugeRouteImport } from './routes/usluge'
+import { Route as RadoviRouteImport } from './routes/radovi'
 import { Route as OMeniRouteImport } from './routes/o-meni'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as KontaktRouteImport } from './routes/kontakt'
@@ -21,6 +22,11 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const UslugeRoute = UslugeRouteImport.update({
   id: '/usluge',
   path: '/usluge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RadoviRoute = RadoviRouteImport.update({
+  id: '/radovi',
+  path: '/radovi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OMeniRoute = OMeniRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/radovi': typeof RadoviRoute
   '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/radovi': typeof RadoviRoute
   '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/mcp': typeof McpRoute
   '/o-meni': typeof OMeniRoute
+  '/radovi': typeof RadoviRoute
   '/usluge': typeof UslugeRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/radovi'
     | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/radovi'
     | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/mcp'
     | '/o-meni'
+    | '/radovi'
     | '/usluge'
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   McpRoute: typeof McpRoute
   OMeniRoute: typeof OMeniRoute
+  RadoviRoute: typeof RadoviRoute
   UslugeRoute: typeof UslugeRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -144,6 +157,13 @@ declare module '@tanstack/react-router' {
       path: '/usluge'
       fullPath: '/usluge'
       preLoaderRoute: typeof UslugeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/radovi': {
+      id: '/radovi'
+      path: '/radovi'
+      fullPath: '/radovi'
+      preLoaderRoute: typeof RadoviRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/o-meni': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   McpRoute: McpRoute,
   OMeniRoute: OMeniRoute,
+  RadoviRoute: RadoviRoute,
   UslugeRoute: UslugeRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:

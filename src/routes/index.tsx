@@ -1,10 +1,42 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import nina from "@/assets/nina.webp";
-import heroLeft from "@/assets/gallery/nude-gel-lak.webp";
-import heroRight from "@/assets/gallery/badem-oblik.webp";
+import bademOblik from "@/assets/gallery/badem-oblik.webp";
+import french from "@/assets/gallery/french.webp";
+import cvjetniDetalji from "@/assets/gallery/cvjetni-detalji.webp";
+import gelNadogradnja from "@/assets/gallery/gel-nadogradnja.webp";
+import ljetniDetalji from "@/assets/gallery/ljetni-detalji.webp";
+import leopardPrint from "@/assets/gallery/leopard-print.webp";
+import tresnjinCvijet from "@/assets/gallery/tresnjin-cvijet.webp";
+import bijeliFrenchCvijet from "@/assets/hero/bijeli-french-cvijet.webp";
+import cvjetneMrljice from "@/assets/hero/cvjetne-mrljice.webp";
+import ruzicastiCvjetovi from "@/assets/hero/ruzicasti-cvjetovi.webp";
+import blijediSjaj from "@/assets/hero/blijedi-sjaj.webp";
+import sareniDetalji from "@/assets/hero/sareni-detalji.webp";
+import rozaGelPrsten from "@/assets/hero/roza-gel-prsten.webp";
+import cvjetniAkcenti from "@/assets/hero/cvjetni-akcenti.webp";
+import zutiGelTraper from "@/assets/hero/zuti-gel-traper.webp";
 import { ArrowUpRight, Phone, Instagram, Sparkles, Heart, Gem } from "lucide-react";
+
+const heroSlides = [
+  { src: bijeliFrenchCvijet, alt: "Bijeli french s cvjetnim detaljem" },
+  { src: cvjetneMrljice, alt: "Nježne cvjetne mrljice na nude laku" },
+  { src: bademOblik, alt: "Prirodna duljina i oblik badem" },
+  { src: ruzicastiCvjetovi, alt: "Ružičasti cvjetovi na prozirnom laku" },
+  { src: french, alt: "Elegantni french na gel noktima" },
+  { src: blijediSjaj, alt: "Blijedi sjajni gel lak" },
+  { src: cvjetniDetalji, alt: "French s biserima i 3D cvjetom" },
+  { src: sareniDetalji, alt: "Šareni nail art detalji" },
+  { src: gelNadogradnja, alt: "Nadogradnja gel noktiju" },
+  { src: rozaGelPrsten, alt: "Ružičasti gel lak" },
+  { src: cvjetniAkcenti, alt: "Cvjetni akcenti na nude laku" },
+  { src: zutiGelTraper, alt: "Žuti gel lak" },
+  { src: ljetniDetalji, alt: "French sa zvjezdicama i cvjetnim detaljima" },
+  { src: leopardPrint, alt: "Nail art s leopard uzorkom" },
+  { src: tresnjinCvijet, alt: "Nokti s motivom trešnjinog cvijeta" },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,12 +77,49 @@ const services = [
 ];
 
 function HomePage() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => {
+      setSlide((i) => (i + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-12 lg:pt-20 pb-20 lg:pb-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1">
+      <section className="relative overflow-hidden min-h-[80vh] lg:min-h-[90vh] flex items-center">
+        <div className="absolute inset-0">
+          {heroSlides.map((s, i) => (
+            <img
+              key={s.src}
+              src={s.src}
+              alt={i === slide ? s.alt : ""}
+              aria-hidden={i !== slide}
+              loading={i < 3 ? "eager" : "lazy"}
+              className={`absolute inset-0 h-full w-full object-contain object-right-bottom transition-opacity duration-[1500ms] ease-in-out ${
+                i === slide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          <div
+            className="absolute inset-0 lg:hidden"
+            style={{
+              background: "linear-gradient(to bottom, var(--color-background) 58%, transparent 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 hidden lg:block"
+            style={{
+              background: "linear-gradient(110deg, var(--color-background) 32%, transparent 78%)",
+            }}
+          />
+        </div>
+
+        <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10 py-20 lg:py-28">
+          <div className="max-w-xl">
             <p className="eyebrow"><span className="gold-line mr-3" />Nail Lab by Nina</p>
             <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.98] text-foreground">
               Nokti koji
@@ -76,49 +145,6 @@ function HomePage() {
               >
                 Pogledaj usluge <ArrowUpRight size={16} />
               </Link>
-            </div>
-          </div>
-
-          <div className="lg:col-span-6 order-1 lg:order-2 relative">
-            <div className="flex items-center justify-center gap-3 xl:gap-4">
-              <div
-                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
-                style={{
-                  maskImage: "linear-gradient(to right, transparent, black 75%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent, black 75%)",
-                }}
-              >
-                <img
-                  src={heroLeft}
-                  alt="Rad Nail Lab by Nina — nude gel lak"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="relative aspect-[4/5] w-full max-w-md xl:max-w-sm shrink-0 overflow-hidden">
-                <div className="absolute -inset-4 border border-gold/30" />
-                <img
-                  src={nina}
-                  alt="Nina Zupčić, nail artist iz Pule"
-                  className="relative h-full w-full object-cover"
-                />
-              </div>
-
-              <div
-                className="hidden xl:block w-20 xl:w-24 aspect-[3/4] shrink-0 overflow-hidden opacity-70 blur-[1.5px]"
-                style={{
-                  maskImage: "linear-gradient(to left, transparent, black 75%)",
-                  WebkitMaskImage: "linear-gradient(to left, transparent, black 75%)",
-                }}
-              >
-                <img
-                  src={heroRight}
-                  alt="Rad Nail Lab by Nina — badem oblik noktiju"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -164,15 +190,26 @@ function HomePage() {
 
       {/* ABOUT TEASER */}
       <section className="bg-secondary/40 border-y border-border/60">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 grid lg:grid-cols-12 gap-12 items-start">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-24 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-4">
-            <p className="eyebrow"><span className="gold-line mr-3" />O meni</p>
-            <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
-              Nina Zupčić.
-            </h2>
+            <div className="relative aspect-[4/5] max-w-xs mx-auto lg:mx-0 overflow-hidden">
+              <div className="absolute -inset-4 border border-gold/30" />
+              <img
+                src={nina}
+                alt="Nina Zupčić, nail artist iz Pule"
+                className="relative h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
-          <div className="lg:col-span-8 space-y-6 text-base lg:text-lg leading-relaxed text-muted-foreground">
-            <p>
+          <div className="lg:col-span-8 space-y-6">
+            <div>
+              <p className="eyebrow"><span className="gold-line mr-3" />O meni</p>
+              <h2 className="mt-6 font-display text-4xl lg:text-5xl text-foreground leading-tight">
+                Nina Zupčić.
+              </h2>
+            </div>
+            <p className="text-base lg:text-lg leading-relaxed text-muted-foreground">
               Izradom noktiju bavim se već godinu i pol, uz salonsko iskustvo i
               svakodnevni rad s klijenticama. Posebno volim elegantni french i decentne
               detalje koji naglašavaju prirodnu ljepotu noktiju.
@@ -209,6 +246,14 @@ function HomePage() {
           </a>
         </div>
         <GalleryGrid />
+        <div className="mt-12 text-center">
+          <Link
+            to="/radovi"
+            className="inline-flex items-center gap-2 border border-gold px-8 py-3.5 text-sm tracking-wide text-foreground hover:bg-gold/10 transition-colors"
+          >
+            Više radova <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </section>
 
 

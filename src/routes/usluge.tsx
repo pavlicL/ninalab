@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { BackButton } from "@/components/BackButton";
 import { ArrowUpRight, Check } from "lucide-react";
 import { SERVICES } from "@/lib/mcp/content";
 
@@ -26,6 +27,7 @@ export const Route = createFileRoute("/usluge")({
 function UslugePage() {
   return (
     <SiteLayout>
+      <BackButton />
       <section className="mx-auto max-w-4xl px-6 lg:px-10 pt-20 lg:pt-28 text-center">
         <p className="eyebrow"><span className="gold-line mr-3" />Usluge</p>
         <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight">

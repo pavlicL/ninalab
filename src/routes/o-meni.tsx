@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { BackButton } from "@/components/BackButton";
 import nina from "@/assets/nina.webp";
 import { ArrowUpRight } from "lucide-react";
 
@@ -26,6 +27,7 @@ export const Route = createFileRoute("/o-meni")({
 function OMeniPage() {
   return (
     <SiteLayout>
+      <BackButton />
       <section className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-12 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="order-2 lg:order-1">
           <p className="eyebrow"><span className="gold-line mr-3" />O meni</p>

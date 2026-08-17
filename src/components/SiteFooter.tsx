@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Phone } from "lucide-react";
+import { OWNER } from "@/lib/mcp/content";
 
 export function SiteFooter() {
   return (
@@ -40,7 +41,7 @@ export function SiteFooter() {
           >
             <Phone size={14} /> 091 604 3232
           </a>
-          <p className="mt-3 text-sm text-muted-foreground">Pula, Hrvatska</p>
+          <p className="mt-3 text-sm text-muted-foreground">{OWNER.address}</p>
         </div>
       </div>
 

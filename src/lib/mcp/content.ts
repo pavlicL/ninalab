@@ -11,6 +11,7 @@ export const OWNER = {
   tagline: "Nail artist · Pula",
   phone: "091 604 3232",
   instagram: "https://www.instagram.com/naillab_bynina/",
+  address: "Mirna 2, Kaštanjer, Pula",
 };
 
 export const SERVICES: Service[] = [
